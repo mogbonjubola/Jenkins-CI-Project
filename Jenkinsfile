@@ -8,7 +8,7 @@ pipeline {
     environment{
         SNAP_REPO = 'udemy-snapshot'
         NEXUS_USER = 'admin'
-        NEXUS-PASS = 'Motunrayo@94'
+        NEXUS_PASS = 'Motunrayo@94'
         RELEASE_REPO = 'udemy-release'
         CENTRAL_REPO = 'udemy-maven-central'
         NEXUSIP = '172.31.21.138'
