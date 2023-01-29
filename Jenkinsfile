@@ -15,6 +15,8 @@ pipeline {
         NEXUSPORT = '8081' 
         NEXUS_GRP_REPO = 'udemy-maven-group'
         NEXUS_LOGIN = 'nexus_login'
+        SONARSERVER = 'sonarserver'
+        SONARSCANNER = 'sonarscanner'
     }
     stages {
         stage('Build'){
