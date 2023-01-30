@@ -14,7 +14,7 @@ pipeline {
         NEXUSIP = '172.31.21.138'
         NEXUSPORT = '8081' 
         NEXUS_GRP_REPO = 'udemy-maven-group'
-        NEXUS_LOGIN = 'nexus_login'
+        NEXUS_LOGIN = 'nexuslogin'
         SONARSERVER = 'sonarserver'
         SONARSCANNER = 'sonarscanner'
     }
@@ -72,8 +72,8 @@ pipeline {
             }
         }
 
-        stage("UploadArtifact"){
-            steps{
+        stage("UploadArtifact") {
+            steps {
                 nexusArtifactUploader(
                   nexusVersion: 'nexus3',
                   protocol: 'http',
