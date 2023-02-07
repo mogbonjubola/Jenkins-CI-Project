@@ -20,6 +20,8 @@ pipeline {
         registryCredential = 'ecr:us-east-1:awscreds'
         appRegistry = '045958208554.dkr.ecr.us-east-1.amazonaws.com/udemyappimg'
         vprofileRegistry = "https://045958208554.dkr.ecr.us-east-1.amazonaws.com"
+        cluster = "UdemyStaging"
+        service = "udemyappstagesvc"
     }
     stages {
         stage('Build'){
@@ -114,6 +116,15 @@ pipeline {
             }
           }
         }
+
+        stage('Deploy to ECS staging') {
+            steps {
+                withAWS(credentials: 'awscreds', region: 'us-east-1') {
+                    sh 'aws ecs update-service --cluster ${cluster} --service ${service} --force-new-deployment'
+                } 
+            }
+        }
+    
 
     }
         
